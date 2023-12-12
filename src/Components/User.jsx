@@ -1,18 +1,41 @@
 import React from "react";
-import { useState } from "react";
 
-const User = (props) => {
-  const [count] = useState(0);
-  const [count2] = useState(1);
-  return (
-    <div className="user-card">
-      <h1>Count = {count}</h1>
-      <h1>Count2 = {count2}</h1>
-      <h2>Name : {props.name}</h2>
-      <h3>Locations : Varanasi</h3>
-      <h4>Contact : st172486</h4>
-    </div>
-  );
-};
+class User extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+    };
+    console.log("User constructor is called");
+  }
+  componentDidMount() {
+    console.log("User Component Did Mount");
+    //componentDidMount is called once the component is mounted
+  }
+  render() {
+    console.log("User render is called");
+    const { name, location } = this.props;
+    const { count } = this.state;
+    return (
+      <div className="user-card">
+        <button
+          onClick={() => {
+            this.setState({
+              count: count + 1,
+            });
+          }}
+        >
+          Click
+        </button>
+        <h1>Count = {count}</h1>
+
+        <h2>Name : {name}</h2>
+        <h3>Locations : {location}</h3>
+        <h4>Contact : st172486</h4>
+      </div>
+    );
+  }
+}
 
 export default User;
