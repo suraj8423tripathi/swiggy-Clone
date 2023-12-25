@@ -73,3 +73,25 @@
   padding: 10px;
   border: 1px solid black
 }
+.menu {
+  text-align: center;
+}
+
+.res-name {
+    font-size: 20px;   
+}
+
+.cuisines{
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.menu {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.accordian-title {
+  cursor: pointer
+}
