@@ -23,9 +23,9 @@ const Body = () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
-    console.log({ data });
+
     const json = await data.json();
-    console.log(json);
+
     const { cards } = json.data;
     const restaurantInfo = cards.filter(
       (item) => item?.card?.card?.id === "restaurant_grid_listing"
@@ -70,6 +70,10 @@ const Body = () => {
         <button className="filter-btn" onClick={clickHandler}>
           Top Rated Restaurants
         </button>
+        <div>
+          <label htmlFor="">UserName</label>
+          <input type="text" />
+        </div>
       </div>
       <div className="res-container">
         {filteredRestaurants.map((resCard) => (

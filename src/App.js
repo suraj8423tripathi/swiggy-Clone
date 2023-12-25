@@ -16,9 +16,14 @@ function App() {
     setUserName(data.name);
   });
   return (
+    // Default values
     <Usercontext.Provider value={{ loggedInUser: userName }}>
+      {/* //Suraj Tripathi */}
       <div className="App">
-        <Header />
+        <Usercontext.Provider value={{ loggedInUser: "Elon Musk" }}>
+          {/* Only in Header It will Show Elon Musk */}
+          <Header />
+        </Usercontext.Provider>
         <Outlet />
       </div>
     </Usercontext.Provider>
