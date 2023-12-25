@@ -13,7 +13,7 @@ const RestaurantCategories = (props) => {
     <div className="accordion">
       <span onClick={() => toggleAccordion(index)} className="accordian-title">
         {props?.data?.title} ({itemCards.length})
-        <span class>{isContentVisible && isAccordianOpen ? "⬆️" : "⬇️"}</span>
+        <span>{isContentVisible && isAccordianOpen ? "⬆️" : "⬇️"}</span>
       </span>
 
       {isContentVisible && isAccordianOpen ? (
